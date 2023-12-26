@@ -1,7 +1,10 @@
 const express = require('express');
+const cors = require('cors');
 const amqp = require('amqplib/callback_api');
 const logger = require('./logger');
 const app = express();
+
+app.use(cors({ origin: '*' }));
 app.use(express.json());
 
 app.post('/tasks', (req, res) => {

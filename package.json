@@ -4,12 +4,15 @@
   "description": "Async nodejs app",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "cd server && node microservice1.js",
+    "start2": "cd server && node microservice2.js"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "amqplib": "^0.10.3",
+    "cors": "^2.8.5",
     "express": "^4.18.2",
     "socket.io": "^4.7.2",
     "socket.io-client": "^4.7.2",

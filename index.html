@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>NodeJSAsyncApp</title>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</head>
+<body>
+    <input type="number" id="numberInput" placeholder="Enter a number">
+    <button onclick="sendNumber()">SEND</button>
+    <p id="response"></p>
+
+    <script>
+        function sendNumber() {
+    var number = document.getElementById('numberInput').value;
+    axios.post('http://localhost:3000/tasks', {
+        number: number
+    })
+    .then(function (response) {
+        setTimeout(function() {
+            axios.get('http://localhost:4000/result')
+            .then(function (response) {
+                document.getElementById('response').innerText = 'Response: ' + response.data;
+            })
+            .catch(function (error) {
+                document.getElementById('response').innerText = 'Error: ' + error;
+            });
+        }, 5000);
+    })
+    .catch(function (error) {
+        document.getElementById('response').innerText = 'Error: ' + error;
+    });
+}
+    </script>
+</body>
+</html>

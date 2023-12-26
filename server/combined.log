@@ -1,0 +1,5 @@
+
+{"level":"info","message":"Received a new task with number: 72343455","service":"user-service"}
+{"level":"info","message":"Processed task. Result: 144686910","service":"user-service"}
+{"level":"info","message":"Received a new task with number: 6","service":"user-service"}
+{"level":"info","message":"Processed task. Result: 12","service":"user-service"}
